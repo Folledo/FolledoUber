@@ -14,6 +14,7 @@
 		CD0547FA20EC3A0E00862935 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CD0547F920EC3A0E00862935 /* Assets.xcassets */; };
 		CD0547FD20EC3A0E00862935 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CD0547FB20EC3A0E00862935 /* LaunchScreen.storyboard */; };
 		CD05480520EC3B5800862935 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CD05480420EC3B5800862935 /* GoogleService-Info.plist */; };
+		CD3F1CBA20EC5D43003B3A60 /* RiderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD3F1CB920EC5D43003B3A60 /* RiderViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		CD0547FC20EC3A0E00862935 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CD0547FE20EC3A0E00862935 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CD05480420EC3B5800862935 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		CD3F1CB920EC5D43003B3A60 /* RiderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RiderViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +85,7 @@
 				CD0547F220EC3A0300862935 /* AppDelegate.swift */,
 				CD0547F420EC3A0300862935 /* ViewController.swift */,
 				CD0547F620EC3A0300862935 /* Main.storyboard */,
+				CD3F1CB920EC5D43003B3A60 /* RiderViewController.swift */,
 				CD0547F920EC3A0E00862935 /* Assets.xcassets */,
 				CD0547FB20EC3A0E00862935 /* LaunchScreen.storyboard */,
 				CD0547FE20EC3A0E00862935 /* Info.plist */,
@@ -170,12 +173,14 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-FolledoUber/Pods-FolledoUber-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -209,6 +214,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CD0547F520EC3A0300862935 /* ViewController.swift in Sources */,
+				CD3F1CBA20EC5D43003B3A60 /* RiderViewController.swift in Sources */,
 				CD0547F320EC3A0300862935 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

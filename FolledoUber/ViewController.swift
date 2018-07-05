@@ -54,8 +54,10 @@ class ViewController: UIViewController {
                 Auth.auth().signIn(withEmail: email, password: password) { (user, error) in //2 //26mins
                     if error != nil { //2 //26mins
                         self.displayAlert(title: "Error", message: error!.localizedDescription) //2 //26mins
+                        
                     } else { //2 //26mins //Dont forget to setup an authentication process
                         print("Log In Success")
+                        self.performSegue(withIdentifier: "riderSegue", sender: nil) //3 //4mins
                     }
                     
                 }

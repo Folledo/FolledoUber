@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -24,13 +25,13 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="you@gmail.com" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="kYn-V5-EUn">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="rider@gmail.com" borderStyle="roundedRect" placeholder="you@gmail.com" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="kYn-V5-EUn">
                                 <rect key="frame" x="20" y="62" width="335" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" textContentType="email"/>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="wtf-xA-URf">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="pogi99" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="wtf-xA-URf">
                                 <rect key="frame" x="20" y="100" width="335" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -46,7 +47,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Driver" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hw5-kf-vvs">
-                                <rect key="frame" x="232" y="143" width="46" height="21"/>
+                                <rect key="frame" x="220" y="143" width="46" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -56,6 +57,7 @@
                                 <state key="normal" title="Sign Up"/>
                                 <connections>
                                     <action selector="topTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="kEq-bS-LuD"/>
+                                    <segue destination="3sI-BH-pdj" kind="presentation" identifier="riderSegue" id="oWn-Cf-PGo"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tbw-Og-Suf">
@@ -83,7 +85,7 @@
                             <constraint firstItem="e7r-ch-Fkl" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Xl7-mG-3Wk"/>
                             <constraint firstItem="wtf-xA-URf" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="ZJC-Ln-nu0"/>
                             <constraint firstItem="Hw5-kf-vvs" firstAttribute="centerY" secondItem="i52-0o-a0e" secondAttribute="centerY" id="aGb-4R-77w"/>
-                            <constraint firstItem="Hw5-kf-vvs" firstAttribute="leading" secondItem="i52-0o-a0e" secondAttribute="trailing" constant="20" id="c3u-08-EPA"/>
+                            <constraint firstItem="Hw5-kf-vvs" firstAttribute="leading" secondItem="i52-0o-a0e" secondAttribute="trailing" constant="8" id="c3u-08-EPA"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="kYn-V5-EUn" secondAttribute="trailing" constant="20" id="g2u-Wd-hYL"/>
                             <constraint firstItem="i52-0o-a0e" firstAttribute="leading" secondItem="Thf-cD-swU" secondAttribute="trailing" constant="4" id="htO-OW-0u2"/>
                             <constraint firstItem="i52-0o-a0e" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="iNE-Pi-Eu1"/>
@@ -109,6 +111,72 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+        </scene>
+        <!--Rider View Controller-->
+        <scene sceneID="sf0-qT-aeK">
+            <objects>
+                <viewController id="Tjr-qU-YqG" customClass="RiderViewController" customModule="FolledoUber" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="eBb-nU-9w2">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="N65-f2-AC9">
+                                <rect key="frame" x="20" y="84" width="335" height="335"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="N65-f2-AC9" secondAttribute="height" multiplier="1:1" id="NR7-oA-2hS"/>
+                                </constraints>
+                            </mapView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aHG-gh-4bm">
+                                <rect key="frame" x="145" y="427" width="84" height="30"/>
+                                <state key="normal" title="Call an Uber"/>
+                                <connections>
+                                    <action selector="callAnUberTapped:" destination="Tjr-qU-YqG" eventType="touchUpInside" id="eto-kM-edm"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="aHG-gh-4bm" firstAttribute="centerX" secondItem="eBb-nU-9w2" secondAttribute="centerX" id="3rf-DG-uV1"/>
+                            <constraint firstItem="N65-f2-AC9" firstAttribute="top" secondItem="WQU-By-WeB" secondAttribute="top" constant="20" id="Csy-k0-OgM"/>
+                            <constraint firstItem="aHG-gh-4bm" firstAttribute="top" secondItem="N65-f2-AC9" secondAttribute="bottom" constant="8" id="ROy-GM-UpC"/>
+                            <constraint firstItem="WQU-By-WeB" firstAttribute="trailing" secondItem="N65-f2-AC9" secondAttribute="trailing" constant="20" id="eof-Pn-CPR"/>
+                            <constraint firstItem="N65-f2-AC9" firstAttribute="leading" secondItem="WQU-By-WeB" secondAttribute="leading" constant="20" id="xYK-el-vQV"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="WQU-By-WeB"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="8As-jK-S5S">
+                        <barButtonItem key="leftBarButtonItem" title="Logout" id="Bww-BD-cDc">
+                            <connections>
+                                <action selector="logoutTapped:" destination="Tjr-qU-YqG" id="gHW-TM-XW7"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="callAnUberButton" destination="aHG-gh-4bm" id="ZT4-yo-TKm"/>
+                        <outlet property="mapView" destination="N65-f2-AC9" id="cbd-kT-YFe"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ucO-Tq-aB0" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1720.8" y="30.134932533733135"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="YZh-qT-qYd">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="3sI-BH-pdj" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="2Y8-OW-can">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Tjr-qU-YqG" kind="relationship" relationship="rootViewController" id="It2-oe-39j"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="LHc-SS-fIh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="781.60000000000002" y="29.23538230884558"/>
         </scene>
     </scenes>
 </document>

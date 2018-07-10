@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		86DE96F055C2421AC43791BA /* Pods_FolledoUber.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD1E367F60CB7A11B1317D33 /* Pods_FolledoUber.framework */; };
+		CD01F33B20EED58400E63A8E /* DriverTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD01F33A20EED58400E63A8E /* DriverTableViewController.swift */; };
+		CD021DF720F401260038F706 /* AcceptRequestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD021DF620F401260038F706 /* AcceptRequestViewController.swift */; };
 		CD0547F320EC3A0300862935 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD0547F220EC3A0300862935 /* AppDelegate.swift */; };
 		CD0547F520EC3A0300862935 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD0547F420EC3A0300862935 /* ViewController.swift */; };
 		CD0547F820EC3A0300862935 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CD0547F620EC3A0300862935 /* Main.storyboard */; };
@@ -21,6 +23,8 @@
 		38A46548C066A3870F3FE65E /* Pods-FolledoUber.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FolledoUber.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FolledoUber/Pods-FolledoUber.debug.xcconfig"; sourceTree = "<group>"; };
 		83BC953F04BF9AC4C378F556 /* Pods-FolledoUber.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FolledoUber.release.xcconfig"; path = "Pods/Target Support Files/Pods-FolledoUber/Pods-FolledoUber.release.xcconfig"; sourceTree = "<group>"; };
 		AD1E367F60CB7A11B1317D33 /* Pods_FolledoUber.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FolledoUber.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CD01F33A20EED58400E63A8E /* DriverTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DriverTableViewController.swift; path = /Users/kobe/Desktop/FolledoUber/FolledoUber/DriverTableViewController.swift; sourceTree = "<absolute>"; };
+		CD021DF620F401260038F706 /* AcceptRequestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AcceptRequestViewController.swift; sourceTree = "<group>"; };
 		CD0547EF20EC3A0300862935 /* FolledoUber.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FolledoUber.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CD0547F220EC3A0300862935 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CD0547F420EC3A0300862935 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -86,6 +90,8 @@
 				CD0547F420EC3A0300862935 /* ViewController.swift */,
 				CD0547F620EC3A0300862935 /* Main.storyboard */,
 				CD3F1CB920EC5D43003B3A60 /* RiderViewController.swift */,
+				CD01F33A20EED58400E63A8E /* DriverTableViewController.swift */,
+				CD021DF620F401260038F706 /* AcceptRequestViewController.swift */,
 				CD0547F920EC3A0E00862935 /* Assets.xcassets */,
 				CD0547FB20EC3A0E00862935 /* LaunchScreen.storyboard */,
 				CD0547FE20EC3A0E00862935 /* Info.plist */,
@@ -214,8 +220,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				CD0547F520EC3A0300862935 /* ViewController.swift in Sources */,
+				CD01F33B20EED58400E63A8E /* DriverTableViewController.swift in Sources */,
 				CD3F1CBA20EC5D43003B3A60 /* RiderViewController.swift in Sources */,
 				CD0547F320EC3A0300862935 /* AppDelegate.swift in Sources */,
+				CD021DF720F401260038F706 /* AcceptRequestViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

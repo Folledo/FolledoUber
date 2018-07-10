@@ -14,6 +14,7 @@
 
 import UIKit
 import FirebaseAuth //2 //10mins
+import Firebase
 
 class ViewController: UIViewController {
     
@@ -31,40 +32,74 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
     }
-
+    
     @IBAction func topTapped(_ sender: Any) { //2 //8mins
-        
         if emailTextField.text == "" || passwordTextField.text == "" { //2 //17mins
             displayAlert(title: "Missing Information", message: "You must provide both an email and password") //2 //21mins
         } else {
             if let email = emailTextField.text { //2 //24mins
                 if let password = passwordTextField.text { //2 //24mins
-            
-            if signUpMode { //2 //22mins //SIGN UP
-                
-                Auth.auth().createUser(withEmail: email, password: password, completion: { (user, error) in //2 //23mins
-                    if error != nil { //2 //24mins
-                        self.displayAlert(title: "Error", message: error!.localizedDescription) //2 //24mins
-                    } else { //2 //25mins
-                        print("Sign Up Success")
-                    }
-                }) //2 //23mins
-            } else { //2 //22mins //LOG IN
-                
-                Auth.auth().signIn(withEmail: email, password: password) { (user, error) in //2 //26mins
-                    if error != nil { //2 //26mins
-                        self.displayAlert(title: "Error", message: error!.localizedDescription) //2 //26mins
-                        
-                    } else { //2 //26mins //Dont forget to setup an authentication process
-                        print("Log In Success")
-                        self.performSegue(withIdentifier: "riderSegue", sender: nil) //3 //4mins
-                    }
                     
+                    if signUpMode { //2 //22mins //SIGN UP
+                        Auth.auth().createUser(withEmail: email, password: password, completion: { (user, error) in //2 //23mins
+                            
+                            if error != nil { //2 //24mins
+                                self.displayAlert(title: "Error", message: error!.localizedDescription) //2 //24mins
+                                print("ERROR IS ======\(error!.localizedDescription)======")
+                            } else { //2 //25mins //SIGNUP
+                                //print("Sign Up Success")
+                                
+                                if self.riderDriverSwitch.isOn { //4 //2mins Signup as DRIVER
+                                    let req = Auth.auth().currentUser?.createProfileChangeRequest() //4 //3mins make a request
+                                    req?.displayName = "Driver" //4 //3mins if riderDriverSwitch is on, then they will be classified as Driver, if not a Rider
+                                    req?.commitChanges(completion: { (error) in //4 //3mins
+                                        if error != nil {
+                                            self.displayAlert(title: "Error", message: error as! String)
+                                        } else {
+                                            self.performSegue(withIdentifier: "driverSegue", sender: nil) //4 //9mins
+                                        }
+                                    })
+                                } else { //4 //3mins Signup as RIDER
+                                    let req = Auth.auth().currentUser?.createProfileChangeRequest() //4 //3mins make a request
+                                    req?.displayName = "Rider" //4 //3mins
+                                    req?.commitChanges(completion: { (error) in //4 //3mins
+                                        if error != nil {
+                                            self.displayAlert(title: "Error", message: error as! String)
+                                        } else {
+                                            self.performSegue(withIdentifier: "riderSegue", sender: nil) //4 //9mins
+                                        }
+                                    })
+                                }
+                            }
+                        }) //2 //23mins
+                    } else { //2 //22mins //LOG IN
+                        
+                        Auth.auth().signIn(withEmail: email, password: password, completion: { (request, error) in //2 //26mins
+                            if error != nil { //2 //26mins
+                                self.displayAlert(title: "Error", message: error!.localizedDescription) //2 //26mins
+                                print("ERROR IS ======\(error!.localizedDescription)======")
+                            } else { //2 //26mins //Dont forget to setup an authentication process
+                                //print("Log In Success")
+                                
+                                if let userDisplayName = request?.user.displayName {
+                                
+                                    if userDisplayName == "Driver" { //4 //6mins DRIVER
+                                        print("Driver")
+                                        self.performSegue(withIdentifier: "driverSegue", sender: nil) //4 //9mins
+                                        
+                                    } else { //4 //6mins Rider //if displayName = Rider
+                                        print("Rider")
+                                        self.performSegue(withIdentifier: "riderSegue", sender: nil) //3 //4mins //4 //6mins
+                                    }
+                                } else {
+                                    self.displayAlert(title: "Error", message: "No displayName available")
+                                }
+                            }
+                        })
+                    }
                 }
-                
-            }}}
+            }
         }
-        
     }
     
     func displayAlert(title: String, message: String) { //2 //18mins
@@ -73,7 +108,7 @@ class ViewController: UIViewController {
         self.present(alertController, animated: true, completion: nil) //2 //20mins
     }
     
-//bottomTapped method
+    //bottomTapped method
     @IBAction func bottomTapped(_ sender: Any) { //2 //8mins
         if signUpMode { //2 //15mins
             topButton.setTitle("Log In", for: .normal) //2 //15mins
@@ -92,6 +127,6 @@ class ViewController: UIViewController {
         } //2 //15mins
     } //2 //15mins
     
-
+    
 }
 

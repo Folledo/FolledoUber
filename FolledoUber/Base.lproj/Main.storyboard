@@ -25,11 +25,11 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="rider@gmail.com" borderStyle="roundedRect" placeholder="you@gmail.com" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="kYn-V5-EUn">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="driver@gmail.com" borderStyle="roundedRect" placeholder="you@gmail.com" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="kYn-V5-EUn">
                                 <rect key="frame" x="20" y="62" width="335" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" textContentType="email"/>
+                                <textInputTraits key="textInputTraits" keyboardType="emailAddress" textContentType="email"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="pogi99" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="wtf-xA-URf">
                                 <rect key="frame" x="20" y="100" width="335" height="30"/>
@@ -57,7 +57,6 @@
                                 <state key="normal" title="Sign Up"/>
                                 <connections>
                                     <action selector="topTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="kEq-bS-LuD"/>
-                                    <segue destination="3sI-BH-pdj" kind="presentation" identifier="riderSegue" id="oWn-Cf-PGo"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tbw-Og-Suf">
@@ -107,10 +106,13 @@
                         <outlet property="riderDriverSwitch" destination="i52-0o-a0e" id="3Pa-nz-bXk"/>
                         <outlet property="riderLabel" destination="Thf-cD-swU" id="76t-PJ-VSj"/>
                         <outlet property="topButton" destination="xS7-fi-U0L" id="GcF-3v-aYx"/>
+                        <segue destination="3sI-BH-pdj" kind="presentation" identifier="riderSegue" id="jHt-Np-l2z"/>
+                        <segue destination="Qvo-Ut-OCQ" kind="presentation" identifier="driverSegue" id="f8u-mj-ReR"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="-74" y="221"/>
         </scene>
         <!--Rider View Controller-->
         <scene sceneID="sf0-qT-aeK">
@@ -160,6 +162,84 @@
             </objects>
             <point key="canvasLocation" x="1720.8" y="30.134932533733135"/>
         </scene>
+        <!--Accept Request View Controller-->
+        <scene sceneID="cpK-mQ-vst">
+            <objects>
+                <viewController id="krV-Q4-xgx" customClass="AcceptRequestViewController" customModule="FolledoUber" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="D6f-1I-ZkL">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="ygY-kG-v9f">
+                                <rect key="frame" x="20" y="84" width="335" height="335"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="ygY-kG-v9f" secondAttribute="height" multiplier="1:1" id="AMc-Y3-eBl"/>
+                                </constraints>
+                            </mapView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xAJ-5C-SkX">
+                                <rect key="frame" x="132.5" y="427" width="109" height="30"/>
+                                <state key="normal" title="Accept Request"/>
+                                <connections>
+                                    <action selector="acceptTapped:" destination="krV-Q4-xgx" eventType="touchUpInside" id="UOu-YS-1mq"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="xAJ-5C-SkX" firstAttribute="top" secondItem="ygY-kG-v9f" secondAttribute="bottom" constant="8" id="f2f-gf-I8O"/>
+                            <constraint firstItem="ygY-kG-v9f" firstAttribute="leading" secondItem="KzK-yV-1e3" secondAttribute="leading" constant="20" id="gyL-st-kl4"/>
+                            <constraint firstItem="ygY-kG-v9f" firstAttribute="top" secondItem="KzK-yV-1e3" secondAttribute="top" constant="20" id="qTu-nW-euW"/>
+                            <constraint firstItem="KzK-yV-1e3" firstAttribute="trailing" secondItem="ygY-kG-v9f" secondAttribute="trailing" constant="20" id="zNq-eN-V34"/>
+                            <constraint firstItem="xAJ-5C-SkX" firstAttribute="centerX" secondItem="KzK-yV-1e3" secondAttribute="centerX" id="zfz-HV-biW"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="KzK-yV-1e3"/>
+                    </view>
+                    <connections>
+                        <outlet property="mapView" destination="ygY-kG-v9f" id="gIT-Op-Sws"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="UKl-66-dfd" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2737" y="811"/>
+        </scene>
+        <!--Driver Table View Controller-->
+        <scene sceneID="Oe8-eX-9Ny">
+            <objects>
+                <tableViewController id="KVI-gD-mVn" customClass="DriverTableViewController" customModule="FolledoUber" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="otU-RW-IU9">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="rideRequestCell" id="XHA-Cb-38a">
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="XHA-Cb-38a" id="2fo-mJ-weQ">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="KVI-gD-mVn" id="hPJ-ql-G4j"/>
+                            <outlet property="delegate" destination="KVI-gD-mVn" id="Ufv-b2-rEG"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="yGs-de-Kvg">
+                        <barButtonItem key="leftBarButtonItem" title="Logout" id="NIL-6X-JZ2">
+                            <connections>
+                                <action selector="logoutTapped:" destination="KVI-gD-mVn" id="Fhm-hD-USF"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <segue destination="krV-Q4-xgx" kind="show" identifier="acceptSegue" id="CIl-8K-ssG"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7gl-Xp-gBV" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1721" y="811"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="YZh-qT-qYd">
             <objects>
@@ -177,6 +257,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LHc-SS-fIh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="781.60000000000002" y="29.23538230884558"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="41M-ch-tDD">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Qvo-Ut-OCQ" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="xsz-zt-Ac5">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="KVI-gD-mVn" kind="relationship" relationship="rootViewController" id="2eP-xk-QQV"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Erq-aL-wAs" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="782" y="811"/>
         </scene>
     </scenes>
 </document>

@@ -17,7 +17,35 @@
 		CD0547FD20EC3A0E00862935 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CD0547FB20EC3A0E00862935 /* LaunchScreen.storyboard */; };
 		CD05480520EC3B5800862935 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CD05480420EC3B5800862935 /* GoogleService-Info.plist */; };
 		CD3F1CBA20EC5D43003B3A60 /* RiderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD3F1CB920EC5D43003B3A60 /* RiderViewController.swift */; };
+		CDFD1C2220F69EEE00DA04A2 /* pikachu.png in Resources */ = {isa = PBXBuildFile; fileRef = CDFD1C2020F69EEE00DA04A2 /* pikachu.png */; };
+		CDFD1C2320F69EEE00DA04A2 /* charmander.png in Resources */ = {isa = PBXBuildFile; fileRef = CDFD1C2120F69EEE00DA04A2 /* charmander.png */; };
+		CDFFC38920F69C8E00F05FD1 /* KeyboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDFFC38820F69C8E00F05FD1 /* KeyboardViewController.swift */; };
+		CDFFC38D20F69C8E00F05FD1 /* MyKeyboard.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = CDFFC38620F69C8E00F05FD1 /* MyKeyboard.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		CDFFC38B20F69C8E00F05FD1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CD0547E720EC3A0300862935 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CDFFC38520F69C8E00F05FD1;
+			remoteInfo = MyKeyboard;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		CDFFC39120F69C8E00F05FD1 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				CDFFC38D20F69C8E00F05FD1 /* MyKeyboard.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		38A46548C066A3870F3FE65E /* Pods-FolledoUber.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FolledoUber.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FolledoUber/Pods-FolledoUber.debug.xcconfig"; sourceTree = "<group>"; };
@@ -34,6 +62,11 @@
 		CD0547FE20EC3A0E00862935 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CD05480420EC3B5800862935 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		CD3F1CB920EC5D43003B3A60 /* RiderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RiderViewController.swift; sourceTree = "<group>"; };
+		CDFD1C2020F69EEE00DA04A2 /* pikachu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pikachu.png; sourceTree = "<group>"; };
+		CDFD1C2120F69EEE00DA04A2 /* charmander.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = charmander.png; sourceTree = "<group>"; };
+		CDFFC38620F69C8E00F05FD1 /* MyKeyboard.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = MyKeyboard.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		CDFFC38820F69C8E00F05FD1 /* KeyboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardViewController.swift; sourceTree = "<group>"; };
+		CDFFC38A20F69C8E00F05FD1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -42,6 +75,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				86DE96F055C2421AC43791BA /* Pods_FolledoUber.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CDFFC38320F69C8E00F05FD1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -69,6 +109,7 @@
 			isa = PBXGroup;
 			children = (
 				CD0547F120EC3A0300862935 /* FolledoUber */,
+				CDFFC38720F69C8E00F05FD1 /* MyKeyboard */,
 				CD0547F020EC3A0300862935 /* Products */,
 				79AA2F8F5542F25CB56D2750 /* Pods */,
 				941C73A114AC1ECB4B6019DB /* Frameworks */,
@@ -79,6 +120,7 @@
 			isa = PBXGroup;
 			children = (
 				CD0547EF20EC3A0300862935 /* FolledoUber.app */,
+				CDFFC38620F69C8E00F05FD1 /* MyKeyboard.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -100,6 +142,17 @@
 			path = FolledoUber;
 			sourceTree = "<group>";
 		};
+		CDFFC38720F69C8E00F05FD1 /* MyKeyboard */ = {
+			isa = PBXGroup;
+			children = (
+				CDFD1C2120F69EEE00DA04A2 /* charmander.png */,
+				CDFD1C2020F69EEE00DA04A2 /* pikachu.png */,
+				CDFFC38820F69C8E00F05FD1 /* KeyboardViewController.swift */,
+				CDFFC38A20F69C8E00F05FD1 /* Info.plist */,
+			);
+			path = MyKeyboard;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -112,15 +165,34 @@
 				CD0547EC20EC3A0300862935 /* Frameworks */,
 				CD0547ED20EC3A0300862935 /* Resources */,
 				759190BAA51D8C88CC2A065D /* [CP] Embed Pods Frameworks */,
+				CDFFC39120F69C8E00F05FD1 /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				CDFFC38C20F69C8E00F05FD1 /* PBXTargetDependency */,
 			);
 			name = FolledoUber;
 			productName = FolledoUber;
 			productReference = CD0547EF20EC3A0300862935 /* FolledoUber.app */;
 			productType = "com.apple.product-type.application";
+		};
+		CDFFC38520F69C8E00F05FD1 /* MyKeyboard */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CDFFC39020F69C8E00F05FD1 /* Build configuration list for PBXNativeTarget "MyKeyboard" */;
+			buildPhases = (
+				CDFFC38220F69C8E00F05FD1 /* Sources */,
+				CDFFC38320F69C8E00F05FD1 /* Frameworks */,
+				CDFFC38420F69C8E00F05FD1 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MyKeyboard;
+			productName = MyKeyboard;
+			productReference = CDFFC38620F69C8E00F05FD1 /* MyKeyboard.appex */;
+			productType = "com.apple.product-type.app-extension";
 		};
 /* End PBXNativeTarget section */
 
@@ -133,6 +205,9 @@
 				ORGANIZATIONNAME = "Samuel Folledo";
 				TargetAttributes = {
 					CD0547EE20EC3A0300862935 = {
+						CreatedOnToolsVersion = 9.4.1;
+					};
+					CDFFC38520F69C8E00F05FD1 = {
 						CreatedOnToolsVersion = 9.4.1;
 					};
 				};
@@ -151,6 +226,7 @@
 			projectRoot = "";
 			targets = (
 				CD0547EE20EC3A0300862935 /* FolledoUber */,
+				CDFFC38520F69C8E00F05FD1 /* MyKeyboard */,
 			);
 		};
 /* End PBXProject section */
@@ -164,6 +240,15 @@
 				CD05480520EC3B5800862935 /* GoogleService-Info.plist in Resources */,
 				CD0547FA20EC3A0E00862935 /* Assets.xcassets in Resources */,
 				CD0547F820EC3A0300862935 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CDFFC38420F69C8E00F05FD1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CDFD1C2320F69EEE00DA04A2 /* charmander.png in Resources */,
+				CDFD1C2220F69EEE00DA04A2 /* pikachu.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -227,7 +312,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		CDFFC38220F69C8E00F05FD1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CDFFC38920F69C8E00F05FD1 /* KeyboardViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		CDFFC38C20F69C8E00F05FD1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = CDFFC38520F69C8E00F05FD1 /* MyKeyboard */;
+			targetProxy = CDFFC38B20F69C8E00F05FD1 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		CD0547F620EC3A0300862935 /* Main.storyboard */ = {
@@ -367,6 +468,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 38A46548C066A3870F3FE65E /* Pods-FolledoUber.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 8KSKUH7X29;
@@ -386,6 +488,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 83BC953F04BF9AC4C378F556 /* Pods-FolledoUber.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 8KSKUH7X29;
@@ -396,6 +499,44 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = FolledoSwag.FolledoUber;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		CDFFC38E20F69C8E00F05FD1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 8KSKUH7X29;
+				INFOPLIST_FILE = MyKeyboard/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = FolledoSwag.FolledoUber.MyKeyboard;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		CDFFC38F20F69C8E00F05FD1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 8KSKUH7X29;
+				INFOPLIST_FILE = MyKeyboard/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = FolledoSwag.FolledoUber.MyKeyboard;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -418,6 +559,15 @@
 			buildConfigurations = (
 				CD05480220EC3A0E00862935 /* Debug */,
 				CD05480320EC3A0E00862935 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CDFFC39020F69C8E00F05FD1 /* Build configuration list for PBXNativeTarget "MyKeyboard" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CDFFC38E20F69C8E00F05FD1 /* Debug */,
+				CDFFC38F20F69C8E00F05FD1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

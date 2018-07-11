@@ -15,6 +15,7 @@
 import UIKit
 import FirebaseAuth //2 //10mins
 import Firebase
+import GoogleMobileAds //AdMob //11mins
 
 class ViewController: UIViewController {
     
@@ -28,9 +29,14 @@ class ViewController: UIViewController {
     
     var signUpMode = true //2 //11mins
     
+    var interstitial: GADInterstitial! //AdMob //11mins
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
+        interstitial = GADInterstitial(adUnitID: "ca-app-pub-3940256099942544/1033173712") //AdMob //11mins
+        let request = GADRequest() //AdMob //12mins
+        interstitial.load(request) //AdMob //12mins
     }
     
     @IBAction func topTapped(_ sender: Any) { //2 //8mins
@@ -110,6 +116,13 @@ class ViewController: UIViewController {
     
     //bottomTapped method
     @IBAction func bottomTapped(_ sender: Any) { //2 //8mins
+        
+        if interstitial.isReady { //AdMob //12mins
+            interstitial.present(fromRootViewController: self) //AdMob //12mins
+        } else { //AdMob //13mins
+            print("Ad wasn't ready") //AdMob //13mins
+        }
+        
         if signUpMode { //2 //15mins
             topButton.setTitle("Log In", for: .normal) //2 //15mins
             bottomButton.setTitle("Switch to Sign Up", for: .normal) //2 //15mins

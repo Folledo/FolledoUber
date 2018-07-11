@@ -25,7 +25,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="driver@gmail.com" borderStyle="roundedRect" placeholder="you@gmail.com" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="kYn-V5-EUn">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="rider2@gmail.com" borderStyle="roundedRect" placeholder="you@gmail.com" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="kYn-V5-EUn">
                                 <rect key="frame" x="20" y="62" width="335" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -135,12 +135,22 @@
                                     <action selector="callAnUberTapped:" destination="Tjr-qU-YqG" eventType="touchUpInside" id="eto-kM-edm"/>
                                 </connections>
                             </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AbI-WL-JMV" customClass="GADBannerView">
+                                <rect key="frame" x="0.0" y="617" width="375" height="50"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="i5p-nm-ham"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="aHG-gh-4bm" firstAttribute="centerX" secondItem="eBb-nU-9w2" secondAttribute="centerX" id="3rf-DG-uV1"/>
                             <constraint firstItem="N65-f2-AC9" firstAttribute="top" secondItem="WQU-By-WeB" secondAttribute="top" constant="20" id="Csy-k0-OgM"/>
+                            <constraint firstItem="WQU-By-WeB" firstAttribute="trailing" secondItem="AbI-WL-JMV" secondAttribute="trailing" id="KCJ-B5-4n3"/>
                             <constraint firstItem="aHG-gh-4bm" firstAttribute="top" secondItem="N65-f2-AC9" secondAttribute="bottom" constant="8" id="ROy-GM-UpC"/>
+                            <constraint firstItem="AbI-WL-JMV" firstAttribute="bottom" secondItem="WQU-By-WeB" secondAttribute="bottom" id="STT-bw-v1b"/>
+                            <constraint firstItem="AbI-WL-JMV" firstAttribute="leading" secondItem="WQU-By-WeB" secondAttribute="leading" id="TSf-rQ-HNB"/>
                             <constraint firstItem="WQU-By-WeB" firstAttribute="trailing" secondItem="N65-f2-AC9" secondAttribute="trailing" constant="20" id="eof-Pn-CPR"/>
                             <constraint firstItem="N65-f2-AC9" firstAttribute="leading" secondItem="WQU-By-WeB" secondAttribute="leading" constant="20" id="xYK-el-vQV"/>
                         </constraints>
@@ -154,6 +164,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="bannerView" destination="AbI-WL-JMV" id="sRz-fZ-uvY"/>
                         <outlet property="callAnUberButton" destination="aHG-gh-4bm" id="ZT4-yo-TKm"/>
                         <outlet property="mapView" destination="N65-f2-AC9" id="cbd-kT-YFe"/>
                     </connections>

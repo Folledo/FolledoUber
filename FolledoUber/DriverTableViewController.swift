@@ -34,9 +34,15 @@ class DriverTableViewController: UITableViewController, CLLocationManagerDelegat
         //query
         Database.database().reference().child("RideRequests").observe(.childAdded) { (snapshot) in //4 //16mins observe(eventType: with:) observeEventType:withBlock: is used to listen for data changes at a particular location. This is the primary way to read data from the Firebase Database. Your block will be triggered for the initial data and again whenever the data changes.
             
-            self.rideRequests.append(snapshot) //4 //17mins each of these snapshot is going to be the rideRequest and appen it to the array
-            self.tableView.reloadData() //4 //18mins and reload tableView
-        }
+            if let rideRequestDictionary = snapshot.value as? [String:AnyObject] { //5 //1mins
+                if let driverLat = rideRequestDictionary["driverLatitude"] as? Double { //5 //1mins after creating the dictionary, we first have to check if there's a driver's latitude, if there is then we can assume there is a driver's longitude as well and someone is picking that rider up
+                    
+                } else { //5 //then no driver has accepted, and CAN PICK THEM UP
+                    self.rideRequests.append(snapshot) //4 //17mins each of these snapshot is going to be the rideRequest and appen it to the array
+                    self.tableView.reloadData() //4 //18mins and reload tableView
+                }
+            }
+        } //end of database reference to "RideRequests"
         
         Timer.scheduledTimer(withTimeInterval: 2, repeats: true) { (timer) in //4 //29mins
             self.tableView.reloadData() //4 //30mins
@@ -69,7 +75,7 @@ class DriverTableViewController: UITableViewController, CLLocationManagerDelegat
                         let driverCLLocation = CLLocation(latitude: driverLocation.latitude, longitude: driverLocation.longitude) //4 //26mins driver's location
                         let riderCLLocation = CLLocation(latitude: lat, longitude: lon) //4 //26mins grabs the rider's lat/long from the rideRequestDictionary
                         let distance = driverCLLocation.distance(from: riderCLLocation) / 1000 //4 //27mins measure those meters in kilometers // This distance method measures the distance between the location in the current object and the value in the location parameter. The distance is calculated by tracing a line between the two points
-                        let roundedDistance = (round(distance * 100) / 100) * 0.621371 //4 //28mins rounded and multiplied by 0.621371to get the kilometers to miles
+                        let roundedDistance = round((distance * 0.621371) * 100 ) / 100 //4 //28mins rounded and multiplied by 0.621371to get the kilometers to miles
                         cell.textLabel?.text = "\(email) is \(roundedDistance) away" //4 //28mins
                         
                     }

@@ -10,6 +10,9 @@
 // 3) The Rider ViewController =
 // 4) The Driver ViewController
 // 5) Sharing the Driver's Location with the Driver
+/*
+    5) remove the rider in the driverTableViewController if a driver accepted them already
+*/
 
 import UIKit
 import MapKit //4 //36mins
